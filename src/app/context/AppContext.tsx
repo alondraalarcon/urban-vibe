@@ -11,7 +11,7 @@ import { Bounce, ToastContainer, toast } from "react-toastify";
 // Define the type for the context value
 interface AppContextType {
   cartCount: number;
-  addToCart: {};
+  addToCart: () => void;
   removeFromCart: (id: number) => void;
   getCartCount: () => void;
   cartItems: [];
