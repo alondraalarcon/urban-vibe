@@ -17,6 +17,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/css/effect-fade";
+import { useAppContext } from "@/app/context/AppContext";
 
 export default function ProductDetail() {
   const params = useParams();
@@ -25,6 +26,7 @@ export default function ProductDetail() {
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);
 
+  const { cartCount, addToCart } = useAppContext();
   useEffect(() => {
     getProductDetails();
   }, []);
@@ -120,6 +122,7 @@ export default function ProductDetail() {
               <button
                 type="button"
                 className="p-2 bg-gray-900 text-white w-64 h-12 rounded-lg hover:bg-gray-700"
+                onClick={() => addToCart(detail)}
               >
                 Add to Cart
               </button>
