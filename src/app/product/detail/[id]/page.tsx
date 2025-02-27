@@ -68,7 +68,6 @@ export default function ProductDetail() {
               effect="fade"
               spaceBetween={50}
               slidesPerView={31}
-              navigation
               navigation={{
                 prevEl: navigationPrevRef.current,
                 nextEl: navigationNextRef.current,
